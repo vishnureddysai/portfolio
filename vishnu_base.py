@@ -339,7 +339,7 @@ with c2:
 
     with c52:
 
-        file_ = open("../location.GIF","rb")
+        file_ = open("./location.GIF","rb")
         contents = file_.read()
         data_url = base64.b64encode(contents).decode("utf-8")
         file_.close()
