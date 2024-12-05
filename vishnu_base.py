@@ -32,15 +32,15 @@ lottie_ds = load_lottieurl("https://lottie.host/a0d4a5f8-7d6f-417a-be21-73e7456d
 lottie_skills = load_lottieurl("https://lottie.host/f65522d1-d86f-4eb7-9c77-9598dab20bcf/0I6l7LGKgT.json")
 lottie_email = load_lottieurl("https://lottie.host/05b2cdde-e69e-4a6b-b134-348f22402a19/L8GZf08MHP.json")
 chatbot_image = Image.open("./chatbot.PNG")
-crash_detecttion_image = Image.open(".//crashdetecttion.PNG")
-profile_image = Image.open(".//profilepic.JPG")
-agent_image = Image.open(".//agents_new.JPG",)
-foodrecognization_image = Image.open(".//foodrecognization.JPG",)
+crash_detecttion_image = Image.open("./crashdetecttion.PNG")
+profile_image = Image.open("./profilepic.JPG")
+agent_image = Image.open("./agents_new.JPG",)
+foodrecognization_image = Image.open("./foodrecognization.JPG",)
 
 
 with st.sidebar:
 
-    file_ = open(".//profilepic.jpeg","rb")
+    file_ = open("./profilepic.JPG","rb")
     contents = file_.read()
     data_url = base64.b64encode(contents).decode("utf-8")
     file_.close()
@@ -339,7 +339,7 @@ with c2:
 
     with c52:
 
-        file_ = open("../portfolio/location.gif","rb")
+        file_ = open("../location.GIF","rb")
         contents = file_.read()
         data_url = base64.b64encode(contents).decode("utf-8")
         file_.close()
@@ -359,7 +359,7 @@ with c2:
 
     with c53:
 
-        file_ = open("../linkedin.gif","rb")
+        file_ = open("../linkedin.GIF","rb")
         contents = file_.read()
         data_url = base64.b64encode(contents).decode("utf-8")
         file_.close()
@@ -374,7 +374,7 @@ with c2:
 
     with c54:
 
-        file_ = open("../instagram.gif","rb")
+        file_ = open("../instagram.GIF","rb")
         contents = file_.read()
         data_url = base64.b64encode(contents).decode("utf-8")
         file_.close()
@@ -388,7 +388,7 @@ with c2:
         )
 
     with c55:
-        file_ = open("../github.gif","rb")
+        file_ = open("../github.GIF","rb")
         contents = file_.read()
         data_url = base64.b64encode(contents).decode("utf-8")
         file_.close()
@@ -401,7 +401,7 @@ with c2:
         )
     with c56:
 
-        file_ = open("../mediumweb.gif","rb")
+        file_ = open("../mediumweb.GIF","rb")
         contents = file_.read()
         data_url = base64.b64encode(contents).decode("utf-8")
         file_.close()
