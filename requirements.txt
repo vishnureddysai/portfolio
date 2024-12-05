@@ -1,1 +1,1 @@
-pip install streamlit-lottie
+pip install streamlit-lottie==0.0.5
