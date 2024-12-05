@@ -31,16 +31,16 @@ lottie_python = load_lottieurl("https://lottie.host/1c1a5147-ca6d-4365-b4ce-8141
 lottie_ds = load_lottieurl("https://lottie.host/a0d4a5f8-7d6f-417a-be21-73e7456d7410/xiV9yd2BOO.json")
 lottie_skills = load_lottieurl("https://lottie.host/f65522d1-d86f-4eb7-9c77-9598dab20bcf/0I6l7LGKgT.json")
 lottie_email = load_lottieurl("https://lottie.host/05b2cdde-e69e-4a6b-b134-348f22402a19/L8GZf08MHP.json")
-chatbot_image = Image.open("../chatbot.png")
-crash_detecttion_image = Image.open("../crashdetecttion.png")
-profile_image = Image.open("../profilepic.jpeg")
-agent_image = Image.open("../agents_new.jpg",)
-foodrecognization_image = Image.open("../foodrecognization.jpg",)
+chatbot_image = Image.open(".//chatbot.png")
+crash_detecttion_image = Image.open(".//crashdetecttion.png")
+profile_image = Image.open(".//profilepic.jpeg")
+agent_image = Image.open(".//agents_new.jpg",)
+foodrecognization_image = Image.open(".//foodrecognization.jpg",)
 
 
 with st.sidebar:
 
-    file_ = open("../profilepic.jpeg","rb")
+    file_ = open(".//profilepic.jpeg","rb")
     contents = file_.read()
     data_url = base64.b64encode(contents).decode("utf-8")
     file_.close()
@@ -98,7 +98,7 @@ with c2:
         st.write("An **AI Engineer** with a strong passion for artificial intelligence (AI) and machine learning (ML).My interests include Artificial Intelligence,Machine Learning,Computer Vision and Natural Language Processing.")
         st.write(' ')
 
-        with open("..\\Resume vishnu masters final.pdf", "rb") as file:
+        with open("./Resume vishnu masters final.pdf", "rb") as file:
 
             st.download_button(
                 label="Resume",
