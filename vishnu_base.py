@@ -359,7 +359,7 @@ with c2:
 
     with c53:
 
-        file_ = open("../linkedin.GIF","rb")
+        file_ = open("./linkedin.GIF","rb")
         contents = file_.read()
         data_url = base64.b64encode(contents).decode("utf-8")
         file_.close()
@@ -374,7 +374,7 @@ with c2:
 
     with c54:
 
-        file_ = open("../instagram.GIF","rb")
+        file_ = open("./instagram.GIF","rb")
         contents = file_.read()
         data_url = base64.b64encode(contents).decode("utf-8")
         file_.close()
@@ -388,7 +388,7 @@ with c2:
         )
 
     with c55:
-        file_ = open("../github.GIF","rb")
+        file_ = open("./github.GIF","rb")
         contents = file_.read()
         data_url = base64.b64encode(contents).decode("utf-8")
         file_.close()
@@ -401,7 +401,7 @@ with c2:
         )
     with c56:
 
-        file_ = open("../mediumweb.GIF","rb")
+        file_ = open("./mediumweb.GIF","rb")
         contents = file_.read()
         data_url = base64.b64encode(contents).decode("utf-8")
         file_.close()
