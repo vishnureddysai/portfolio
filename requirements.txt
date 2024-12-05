@@ -1,0 +1,7 @@
+streamlit-lottie
+streamlit
+pandas
+requests
+pillow
+DateTime
+
