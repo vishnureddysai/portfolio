@@ -143,7 +143,7 @@ with c2:
             )
         st.markdown(""" 
                 - **Tools:**\n
-                    <span style="font-size: 16px;">Azure, Aws, IBM Cloud Pack, Hugging Face, Open AI</span>
+                    <span style="font-size: 16px;">Azure, Aws, IBM Cloud Pack, Hugging Face, Open AI, Databricks</span>
                   
                 """,unsafe_allow_html=True
             )
@@ -339,7 +339,7 @@ with c2:
 
     with c52:
 
-        file_ = open("./location.GIF","rb")
+        file_ = open("./location.PNG","rb")
         contents = file_.read()
         data_url = base64.b64encode(contents).decode("utf-8")
         file_.close()
