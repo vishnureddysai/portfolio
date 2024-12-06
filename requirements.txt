@@ -4,4 +4,9 @@ pandas
 requests
 pillow
 DateTime
-
+langchain-huggingface
+huggingface_hub
+transformers
+accelerate
+bitsandbytes
+langchain
