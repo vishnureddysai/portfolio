@@ -5,6 +5,9 @@ from PIL import Image
 import base64
 import pandas as pd
 import datetime
+from langchain_huggingface import HuggingFaceEndpoint
+from langchain import PromptTemplate, LLMChain
+sec_key = "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"
 st.set_page_config(page_title="Vishnu Portfolio",layout="wide",initial_sidebar_state="expanded",)
 
 st.title('Vishnu Sai Vardhan Reddy Basi R📝')
@@ -12,7 +15,20 @@ st.markdown('Design & Develop using Streamlit & Python')
 
 
 logs = pd.read_csv(".//vishnu_portfolio_logs.csv")
-    
+
+def llm_answer(question):
+    repo_id="mistralai/Mistral-7B-Instruct-v0.3"
+    llm=HuggingFaceEndpoint(repo_id=repo_id,max_length=128,temperature=0.7,token=sec_key)
+    template = """Question: {question}
+    context is vishnu sai vardhan reddy basi r adress is 7/64-A, S N Colony, Rayachoty, Ysr District, 516269, A.P, India\r\nEmail: vishnupuma18@gmail.com; Phone: +918688353507; my hobbies are playing basketball, cricket and pubg and watches nba my fav team is GSW and players are stepehn curry and msdhoni \r\nOBJECTIVE\r\nData Scientist with 1.5+ years of professional experience and expertise in Python and machine learning, aiming to\r\npursue a Master's in Data Science with a concentration in AI to gain knowledge on advanced AI algorithms and later\r\nwork as an ML/AI Engineer.\r\nACADEMIC QUALIFICATION\r\nBachelors in Computer Science Engineering(Specialization in Data Science) CGPA: 8.36/10 Jul 2019-May 2023\r\nVellore Institute of Technology(VIT), Vellore, Tamil Nadu, India\r\nACADEMIC PROJECTS\r\nFood Recognition and Calorie Counting Using CNN [VIT, Vellore] January 2022 \xe2\x80\x93 June 2022\r\nTeam Size: 3 Role: Team Lead\r\nSummary: Worked in a three-member team to create an application that recognizes food images and calculates calorie\r\ncontent using Convolutional Neural Networks (CNN). Developed algorithms for image recognition and calorie\r\nestimation, leveraging NLP and fuzzy logic for accurate database matching. Achieved 88% accuracy in food\r\nrecognition and 98% accuracy in database matching. The project later garnered interest from a fitness club for\r\nreal-world usage. Tools used included Keras, TensorFlow, Python, and Stream-lit for the app's interactive\r\ndemonstration.\r\nDynamic Intraday Stock Price Prediction with LSTM [VIT, Vellore] August 2021 - October 2021\r\nSummary: Spearheaded an end-to-end project to predict intraday stock prices using Long Short-Term Memory\r\n(LSTM) networks. Gathered real-time data via the Yahoo API and performed comprehensive data science processes in\r\nR, from preprocessing to model training. Developed insightful visualizations using ggplot and Plotly to communicate\r\ntrends and predictions effectively, achieving an error rate of just 3%.\r\nWORK EXPERIENCE\r\nData Scientist, Maruti Suzuki India Limited, Bangalore, India June 2023 - Present\r\n\xe2\x97\x8f Currently enhancing the digital data science project\xe2\x80\x99s accuracy by fine-tuning an open-source LLM model.\r\n\xe2\x97\x8f Collaborating with vehicle domain teams like QA and EV to understand and build use cases.\r\nProject: AI-Powered Digital Data Science Team\r\n\xe2\x97\x8f Developed a system of AI agents that functioned as a digital data science team, including an AI manager, and\r\nused SQL, Python, and Spark developers to handle ETL, data analysis, and visualizations.\r\n\xe2\x97\x8f Built a Streamlit web app for user interaction, using the AI system as the backend, significantly reducing data\r\nanalysis request times from 10 days to 10 minutes.\r\n\xe2\x97\x8f The system reduced the strain on human developers and increased overall team productivity.\r\n\xe2\x97\x8f Received a quarterly performance award after demonstrating the project to the Vice President due to its\r\ntransformative impact on data processing at the company\r\n\r\n\r\nProject: GenAI-based Chatbot for Automated Data Retrieval and Visualization\r\n\xe2\x97\x8f Developed a GenAI-based chatbot that converted natural language requests into SQL queries, retrieved data\r\nfrom the database, and generated visualizations.\r\n\xe2\x97\x8f Implemented a RAG (Retrieval-Augmented Generation) system to understand the database, reducing the\r\nburden on the data team and streamlining query handling.\r\n\xe2\x97\x8f The system enabled the team to track user queries, providing better insights into data usage trends and helping\r\ndrive collaborative business decisions.\r\n\xe2\x97\x8f Achieved an accuracy rate of 97%, significantly improving the team's ability to process and analyze data.\r\nTECHNICAL SKILLS\r\n\xe2\x97\x8f Programming Languages: Python, SQL, C++, Java, R.\r\n\xe2\x97\x8f Frameworks & Libraries: Streamlit, RAG (Retrieval-Augmented Generation), Pandas.\r\n\xe2\x97\x8f AI & Machine Learning: Azure OpenAI, Generative AI, PyTorch, Scikit-Learn, NLP.\r\n\xe2\x97\x8f Data Engineering: ETL, Data Analysis, Data Visualization(matplotlib, plotly, ggplot).\r\n\xe2\x97\x8f Cloud Platforms: Microsoft Azure, IBM data pack, AWS Sagemaker & Bedrock, Databricks.\r\n\xe2\x97\x8f Tools & Technologies: Agency Swarm, SQL Server, Power BI (for visualizations).\r\n\xe2\x97\x8f Collaboration & Deployment: Git, Docker, CI/CD, Streamlit web applications\r\n\r\n\r\nINTERNSHIPS\r\nData Science Intern, Maruti Suzuki India Limited, Bangalore, India January 2023 \xe2\x80\x93 June 2023\r\nProject: Accident Detection Using LSTM Autoencoder\r\n\xe2\x97\x8f Developed a predictive model for accident detection utilizing LSTM (Long Short-Term Memory)\r\nautoencoders to analyze sequential data and identify anomalies.\r\n\xe2\x97\x8f Implemented feature engineering techniques to enhance model accuracy and efficiency, ensuring reliable\r\ndetection of potential accident scenarios.\r\n\xe2\x97\x8f Achieved an F1-score of 82, indicating the model's reliability and making it suitable for deployment.\r\n\xe2\x97\x8f Analyzed results to identify accident hotspots, contributing valuable insights to enhance vehicle safety\r\nprotocols and real-time monitoring.\r\n\xe2\x97\x8f Tools & Frameworks: Python, IBM cp4d, Keras, plotly, Scikit-learn, multi-processing.\r\nCERTIFICATIONS/WORKSHOPS/ADDITIONAL COURSES:.\r\n\xe2\x97\x8f Attended a two-day workshop at the AWS Bangalore office, focusing on AWS cloud platforms (SageMaker\r\nand Bedrock). - April 2024.\r\n\xe2\x97\x8f Developing AI Applications for Azure Coursera - December 2021 - March 2022.\r\n\xe2\x97\x8f DSA + Dynamic Programming with C++ Greek For Geeks - January 2021 - June 2021.\r\nACHIEVEMENTS/CO-CURRICULAR/EXTRACURRICULAR\r\n\xe2\x97\x8f Achieved 5 stars in both Python & SQL for consistently solving problems - HackerRank - October 2022.\r\n\xe2\x97\x8f Secured third position in the Volleyball Cluster tournament, Hyderabad - 2016-17.\r\n\xe2\x97\x8f Received gold medal for two consecutive years at the International Math Olympiad in school & participated at\r\nsecond level which was held nationwide - 2016 & 2017.\r\n\xe2\x97\x8f Participated in a national basketball tournament in the year - SVIS - 2014-15.
+    Answer: give short and crisp answer."""
+    prompt = PromptTemplate(template=template, input_variables=["question"])
+    llm_chain=LLMChain(llm=llm,prompt=prompt,)
+    llm_sol = (llm_chain.invoke(question))
+
+    return llm_sol['text']
+
+
 def load_lottieurl(url):
 
     r = requests.get(url)
@@ -70,9 +86,12 @@ with st.sidebar:
     st.write("My Assistant")
     messages = st.container(height=300)
     if prompt := st.chat_input("Ask if u need more information abt me.. my work or hobbies etc"):
-      messages.chat_message("user").write(prompt)
+        messages.chat_message("user").write(prompt)
+        vishnu_info = llm_answer(prompt)
       
-      messages.chat_message("assistant").write(prompt)
+        messages.chat_message("assistant").write(vishnu_info)
+      
+        messages.chat_message("assistant").write(prompt)
 
     st.markdown('<p>All rights reserved &#xA9; Vishnu Sai.</p>',unsafe_allow_html=True)
 
