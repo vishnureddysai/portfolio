@@ -95,7 +95,7 @@ with st.sidebar:
       
         messages.chat_message("assistant").write(vishnu_info)
       
-        messages.chat_message("assistant").write(prompt)
+       
 
     st.markdown('<p>All rights reserved &#xA9; Vishnu Sai.</p>',unsafe_allow_html=True)
 
