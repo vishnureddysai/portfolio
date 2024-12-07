@@ -7,12 +7,13 @@ import pandas as pd
 import datetime
 from langchain_huggingface import HuggingFaceEndpoint
 from langchain import PromptTemplate, LLMChain
+sec_key = st.secrets['sec_key']
 st.set_page_config(page_title="Vishnu Portfolio",layout="wide",initial_sidebar_state="expanded",)
 repo_id="mistralai/Mistral-7B-Instruct-v0.3"
 llm=HuggingFaceEndpoint(repo_id=repo_id,max_length=128,temperature=0.7,token=sec_key)
 
 import os
-sec_key = st.secrets['sec_key']
+
 st.title('Vishnu Sai Vardhan Reddy Basi R📝')
 st.markdown('Design & Develop using Streamlit & Python')
 
