@@ -71,8 +71,7 @@ with st.sidebar:
     st.write("My Assistant")
     messages = st.container(height=300)
     if prompt := st.chat_input("Ask if u need more information abt me.. my work or hobbies etc"):
-        
-    messages.chat_message("assistant").write(prompt)
+        messages.chat_message("assistant").write(prompt)
       
        
 
