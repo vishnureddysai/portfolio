@@ -5,6 +5,7 @@ from PIL import Image
 import base64
 import pandas as pd
 import datetime
+from google_ai_instance import generate_llm_answer
 
 
 st.title('Vishnu Sai Vardhan Reddy Basi R📝')
@@ -72,6 +73,10 @@ with st.sidebar:
     messages = st.container(height=300)
     if prompt := st.chat_input("Ask if u need more information abt me.. my work or hobbies etc"):
         messages.chat_message("assistant").write(prompt)
+        with st.spinner("thinking"):
+            vishnu_info = generate_llm_answer(prompt)
+          
+            messages.chat_message("assistant").write(vishnu_info)
       
        
 
