@@ -10,3 +10,5 @@ transformers
 accelerate
 bitsandbytes
 langchain
+PyPDF2
+google-generativeai
