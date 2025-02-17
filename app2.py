@@ -222,7 +222,7 @@ with c2:
             """<a href="https://application-tracking-system-ai.streamlit.app/">
             <img src="data:image/png;base64,{}" width="350" height="100">
             </a>""".format(
-                base64.b64encode(open("./ats.JPG", "rb").read()).decode()
+                base64.b64encode(open("./ats.jpg", "rb").read()).decode()
             ),
             unsafe_allow_html=True,
         )
