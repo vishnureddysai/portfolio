@@ -38,7 +38,7 @@ crash_detecttion_image = Image.open("./crashdetection.PNG")
 profile_image = Image.open("./profilepic.JPG")
 agent_image = Image.open("./agents_new.JPG",)
 foodrecognization_image = Image.open("./foodrecognization.JPG",)
-ats_image = Image.open("./ats.JPG",)
+#ats_image = Image.open("./ats.JPG",)
 
 
 with st.sidebar:
